@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./index.html">
+<title>Достижения тренера</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 10px;
+        margin: 0;
+        background-color: #f9f9f9;
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #2563EB; /* accent color */
+    }
+
+    /* Адаптивность */
+    @media (min-width: 600px) {
+        .achievements-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+    }
+    @media (min-width: 900px) {
+        .achievements-container {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    /* Контейнер всех карточек */
+.achievements-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Стиль каждой карточки */
+.achievement-card {
+    background: linear-gradient(145deg, #f9f9f9, #ffffff);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Анимация при наведении */
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+}
+
+/* Картинка */
+.achievement-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Текст */
+.achievement-card p {
+    padding: 15px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #333;
+}
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* расстояние между стрелкой и текстом */
+    margin: 0 auto 20px auto;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #2563EB; /* синий акцент */
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+    text-align: center;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.back-button:hover {
+    background-color: #1e40af; /* темнее при наведении */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.5);
+}
+</style>
+</head>
+<body>
+
+<h1 id="trainerName">Достижения тренера</h1>
+<!-- Кнопка назад -->
+<button class="back-button" id="backBtn">
+   <a href="./index.html">← Назад</a> 
+</button>
+<div class="achievements-wrapper">
+    <div class="achievement-card">
+        <img src="./im5.jpg" alt="Achievement 2024">
+        <p>2024-yil 4-5 may kunlari Toshkent shahrida boʻlib otgan Osiyo chempionati musoboqasida Professinal jang Fulkantakt yoʻnalishida -80 kg vazinda 1 oʻrin chempionlik kamari sohibi bo‘lgan</p>
+    </div>
+
+    <div class="achievement-card">
+        <img src="./photo_2026-02-17_15-08-23.jpg" alt="Achievement 2025">
+        <p>2025 yil 4-5 may kunlari Toshkent shahrida boʻlib otgan sportning Ashihara-karate turi boyicha oʻtqazilgan Osiyo kubogi musoboqasida Prafessional jangda -85 kg vazn Fulkantak yoʻnalishida 1 oʻrinni egalagan</p>
+    </div>
+
+    <div class="achievement-card">
+        <img src="./photo_2026-02-17_15-08-31.jpg" alt="Achievement 2024 Kumite">
+        <p>2024 yil Toshkent shahrida boʻlib oʻtgan Osiyo chempionatida kumite yoʻnalishida -80 kg vazn toifasida faxrli 1 oʻrinni egalagan</p>
+    </div>
+
+    <div class="achievement-card">
+        <img src="./photo_2026-02-17_15-08-39.jpg" alt="Achievement 2023">
+        <p>2023 yil 20-21 may kunlari Toshkent shahrida boʻlib oʻtgan Osiyo kubogi musoboqasida Fulkantak yoʻnalishida -70 kg vazn toifasida fahirli 3 oʻrini qolga kiritgan</p>
+    </div>
+</div>
+
+<script src="./script.js">
+    
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    const trainerId = getQueryParam('trainer');
+    const trainer = trainers[trainerId];
+ // Находим кнопку
+    const backBtn = document.getElementById('backBtn');
+
+    // Добавляем обработчик клика
+    backBtn.addEventListener('click', () => {
+        // Перенаправление на главную страницу
+        window.location.href = 'index.html';
+    });
+ 
+
+</script>
+</body>
+
+</html>
